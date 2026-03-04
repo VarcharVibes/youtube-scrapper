@@ -1,0 +1,12 @@
+#!/bin/sh
+# Auto-push to GitHub after every commit.
+# Installed via: git config core.hooksPath .githooks
+
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+echo "→ Auto-pushing to origin/$BRANCH..."
+git push origin "$BRANCH" 2>&1
+if [ $? -eq 0 ]; then
+  echo "✓ Pushed to GitHub."
+else
+  echo "⚠ Push failed — run 'git push' manually."
+fi
