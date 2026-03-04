@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    name: Syntax check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install yt-dlp and httpx
+        run: pip install yt-dlp httpx
+
+      - name: Check Python syntax — all scripts
+        run: |
+          python3 -m py_compile yt_search.py
+          python3 -m py_compile yt_pipeline.py
+          python3 -m py_compile notebooklm_runner.py
+          echo "✓ All files pass syntax check"
+
+      - name: Verify yt_search CLI loads
+        run: python3 yt_search.py --help
+
+      - name: Verify yt_pipeline CLI loads
+        run: python3 yt_pipeline.py --help
+
+      - name: Verify notebooklm_runner CLI loads
+        run: python3 notebooklm_runner.py --help
+
+      - name: Check no secrets in source
+        run: |
+          if grep -rn "ntn_\|sk-\|AIza" *.py; then
+            echo "ERROR: possible API key found in source"
+            exit 1
+          fi
+          echo "✓ No secrets detected"
