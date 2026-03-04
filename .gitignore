@@ -1,0 +1,44 @@
+# ── Credentials & Secrets ─────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.key
+*_secret*
+*credentials*
+secrets/
+
+# ── Claude Code local settings (may contain API keys / personal paths) ────────
+.claude/settings.local.json
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ── Temp / output files ────────────────────────────────────────────────────────
+/tmp/
+outputs/
+downloads/
+*.tmp
+*.log
+
+# ── macOS ─────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ── Editor ────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
