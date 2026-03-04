@@ -43,6 +43,7 @@ notebooklm login
 Set in your shell or `.env` file:
 ```
 NOTION_API_KEY=your_notion_integration_key
+NOTION_DB_ID=your_research_sessions_database_id
 ```
 
 ---
@@ -165,6 +166,8 @@ Required database properties:
 | Videos Found | Number |
 | Notebook ID | Rich text |
 | Notebook URL | URL |
+
+Copy the database ID from the Notion URL and set it as `NOTION_DB_ID` in your environment.
 
 ---
 
@@ -296,3 +299,11 @@ Each run gives you:
 | Notion page not created | Check `NOTION_API_KEY` is set and integration has access to the DB |
 | Generation never returns | Use `--wait` with complex notebooks (50 sources can take 15 min) |
 | Some YouTube URLs fail | Video may be private or age-restricted — reported per-URL, pipeline continues |
+
+---
+
+## Author
+
+Built by **Varchar Vibes**
+
+- X (Twitter): [@varchar_dev](https://x.com/varchar_dev)

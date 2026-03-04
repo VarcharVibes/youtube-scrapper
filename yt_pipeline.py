@@ -39,7 +39,7 @@ from pathlib import Path
 
 NOTION_KEY     = os.environ.get("NOTION_API_KEY", "")
 NOTION_VER     = "2022-06-28"
-RESEARCH_DB_ID = "3198f989-c98f-81c1-9ccf-f46ec6062624"   # 📚 Research Sessions
+RESEARCH_DB_ID = os.environ.get("NOTION_DB_ID", "")   # set in .env or environment
 SCRAPPER_DIR   = Path(__file__).parent
 
 NLM_QUESTIONS = {

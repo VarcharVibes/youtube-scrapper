@@ -21,11 +21,12 @@ This opens a browser window. Log in with your Google account. The session is sav
 Add to your `~/.zshrc` or `~/.bashrc`:
 ```bash
 export NOTION_API_KEY="your_notion_integration_key"
+export NOTION_DB_ID="your_research_sessions_database_id"
 ```
 
 Or pass inline when running:
 ```bash
-NOTION_API_KEY="ntn_..." python3 yt_pipeline.py "your query"
+NOTION_API_KEY="..." NOTION_DB_ID="..." python3 yt_pipeline.py "your query"
 ```
 
 ## 4. Notion Setup
@@ -43,7 +44,7 @@ NOTION_API_KEY="ntn_..." python3 yt_pipeline.py "your query"
    ```
    https://notion.so/workspace/DATABASE_ID_HERE?v=...
    ```
-4. Update `RESEARCH_DB_ID` in `yt_pipeline.py`
+4. Copy the database ID from the URL and set it as `NOTION_DB_ID` in your environment
 
 ### Required Database Properties
 Create these properties in your Notion database:
