@@ -48,8 +48,8 @@ NLM_QUESTIONS = {
         "Number each one (1. 2. 3. etc). Keep each takeaway to 1-2 sentences."
     ),
     "action_steps": (
-        "List exactly 10 practical action steps someone can take RIGHT NOW to start or grow "
-        "an AI influencer business based on the strategies in these sources. "
+        "List exactly 10 practical action steps someone can take RIGHT NOW based on the strategies "
+        "and insights in these sources. "
         "Number each step (1. 2. 3. etc). Be specific and actionable."
     ),
 }
