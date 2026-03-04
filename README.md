@@ -178,6 +178,114 @@ Required database properties:
 
 ---
 
+## Cost Estimation
+
+**This pipeline is 100% free to run.** No paid APIs used.
+
+| Service | Cost | Account needed |
+|---------|------|---------------|
+| YouTube scraping (yt-dlp) | Free | None |
+| Google NotebookLM | Free | Free Google account |
+| Notion logging | Free | Free Notion account |
+| notebooklm-py library | Free | None |
+
+### Per-search cost breakdown
+
+| Search size | Time to complete | Cost |
+|-------------|-----------------|------|
+| 5 videos, no mindmap | ~2–3 min | $0 |
+| 10 videos + mindmap | ~5–8 min | $0 |
+| 20 videos + mindmap | ~8–12 min | $0 |
+| 50 videos + mindmap | ~12–20 min | $0 |
+
+Most of the time is Google's servers processing NotebookLM sources and generating artifacts — not your machine.
+
+### The only "cost" is time
+- Source processing: ~1 min per 10 videos (done on Google's servers)
+- Mind map generation: 2–5 min
+- Audio podcast generation: 3–10 min
+- Study guide / report: 2–5 min
+- Infographic / flashcards: 1–3 min
+
+> **NotebookLM Plus** ($20/month) gives higher limits and priority generation. The free tier is sufficient for most use cases.
+
+---
+
+## Use Cases
+
+This tool works for **any topic** you want to research on YouTube. Run it whenever you want to quickly understand a subject without watching hours of videos.
+
+### Business & Entrepreneurship
+```bash
+python3 yt_pipeline.py "dropshipping 2025 beginners" --count 20
+python3 yt_pipeline.py "Amazon FBA product research" --count 15
+python3 yt_pipeline.py "cold email sales strategy" --count 20
+python3 yt_pipeline.py "agency business model how to start" --count 20
+python3 yt_pipeline.py "SaaS startup lessons learned" --count 15
+```
+
+### Marketing & Growth
+```bash
+python3 yt_pipeline.py "YouTube channel growth strategy" --count 20
+python3 yt_pipeline.py "TikTok viral content formula" --count 20
+python3 yt_pipeline.py "email list building strategies" --count 15
+python3 yt_pipeline.py "SEO for beginners 2025" --count 20
+python3 yt_pipeline.py "personal branding tips creators" --count 15
+```
+
+### AI & Tech
+```bash
+python3 yt_pipeline.py "AI agent frameworks tutorial" --count 20
+python3 yt_pipeline.py "Claude Code tips and tricks" --count 15
+python3 yt_pipeline.py "n8n automation workflows" --count 20
+python3 yt_pipeline.py "AI tools for content creators" --count 20
+python3 yt_pipeline.py "prompt engineering best practices" --count 15
+```
+
+### Investing & Finance
+```bash
+python3 yt_pipeline.py "real estate investing for beginners" --count 20
+python3 yt_pipeline.py "stock market investing strategy 2025" --count 15
+python3 yt_pipeline.py "passive income ideas that actually work" --count 20
+python3 yt_pipeline.py "crypto trading strategies" --count 15
+```
+
+### Learning & Skills
+```bash
+python3 yt_pipeline.py "learn Python fast beginner" --count 20
+python3 yt_pipeline.py "public speaking tips" --count 15
+python3 yt_pipeline.py "copywriting techniques that convert" --count 20
+python3 yt_pipeline.py "negotiation skills salary" --count 15
+```
+
+### Health & Lifestyle
+```bash
+python3 yt_pipeline.py "intermittent fasting results how to" --count 15
+python3 yt_pipeline.py "morning routine productivity" --count 20
+python3 yt_pipeline.py "sleep optimization science" --count 15
+```
+
+### Research & Competitive Intelligence
+```bash
+# Understand a competitor's content strategy
+python3 yt_pipeline.py "MrBeast video strategy breakdown" --count 10
+
+# Quickly onboard to an unfamiliar industry
+python3 yt_pipeline.py "supply chain management explained" --count 20
+
+# Generate content ideas from what's already working
+python3 yt_pipeline.py "faceless YouTube channel ideas 2025" --count 20
+```
+
+Each run gives you:
+- A NotebookLM notebook with all videos as sources (ask it anything)
+- 10 key takeaways distilled from all videos combined
+- 10 specific action steps you can take immediately
+- A visual mind map of the topic
+- Everything logged to Notion for future reference
+
+---
+
 ## Troubleshooting
 
 | Issue | Fix |
